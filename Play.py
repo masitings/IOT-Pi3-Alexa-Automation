@@ -22,7 +22,7 @@ class device_handler(debounce_handler):
     """
     #TRIGGERS = {str(sys.argv[1]): int(sys.argv[2])}
     #TRIGGERS = {"office": 52000}
-    TRIGGERS = {"socket 1": 52000,"socket 2":51000}
+    TRIGGERS = {"socket 1": 52000,"socket 2":51000,"flash room":53000}
 
     def act(self, client_address, state, name):
         print("State", state, "from client @", client_address)
