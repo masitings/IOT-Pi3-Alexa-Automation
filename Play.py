@@ -26,9 +26,6 @@ class device_handler(debounce_handler):
 
     def act(self, client_address, state, name):
         print("State", state, "from client @", client_address)
-        # GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
-        # GPIO.setup(int(7), GPIO.OUT)   ## Setup GPIO Pin to OUTPUT
-        # GPIO.output(int(7), state) ## State is true/false
         if name=="socket 1":
             GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
             GPIO.setup(int(35), GPIO.OUT)   ## Setup GPIO Pin to OUTPUT
@@ -37,6 +34,10 @@ class device_handler(debounce_handler):
             GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
             GPIO.setup(int(37), GPIO.OUT)   ## Setup GPIO Pin to OUTPUT
             GPIO.output(int(37), state) ## State is true/false
+        elif name =="flash room":
+            GPIO.setmode(GPIO.BOARD)
+            GPIO.setup(int(40), GPIO.OUT)
+            GPIO.output(int(40), state)
         else:
             print("Device not found!")
 
